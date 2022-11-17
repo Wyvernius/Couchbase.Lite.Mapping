@@ -59,5 +59,58 @@ namespace Couchbase.Lite
 
             return obj;
         }
+
+        public static object ToObject(this Document document, Type type)
+        {
+            object obj = default;
+
+            try
+            {
+                if (document != null)
+                {
+                    if (document.ToDictionary()?.Count > 0)
+                    {
+                        var settings = new JsonSerializerSettings
+                        {
+                            ContractResolver = new ExcludeStreamPropertiesResolver()
+                        };
+
+                        settings.Converters.Add(new BlobToBytesJsonConverter());
+                        settings.Converters.Add(new DateTimeOffsetToDateTimeJsonConverter());
+
+                        var dictionary = document.ToMutable()?.ToDictionary();
+
+                        if (dictionary != null)
+                        {
+                            var json = JsonConvert.SerializeObject(dictionary, type, settings);
+
+                            if (!string.IsNullOrEmpty(json))
+                            {
+                                var jObj = JObject.Parse(json);
+
+                                if (jObj != null)
+                                {
+                                    obj = jObj.ToObject(type);
+                                }
+                                else
+                                {
+                                    obj = Activator.CreateInstance(type);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        obj = Activator.CreateInstance(type);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Couchbase.Lite.Mapper - Error: {ex.Message}");
+            }
+
+            return obj;
+        }
     }
 }
