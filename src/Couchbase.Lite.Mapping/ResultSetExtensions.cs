@@ -87,7 +87,7 @@ namespace Couchbase.Lite
                 {
                     var obj = ToObject<T>(result);
 
-                    if (obj != default)
+                    if (obj != null)
                     {
                         objects.Add(obj);
                     }
