@@ -10,7 +10,8 @@
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Couchbase.Lite" Version="2.1.2" />
+    <PackageReference Include="Couchbase.Lite" Version="3.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Couchbase.Lite.Mapping\Couchbase.Lite.Mapping.csproj" />

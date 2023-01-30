@@ -12,7 +12,8 @@ namespace Couchbase.Lite.Mapping
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return new DateTimeOffset((DateTime)reader.Value);
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
