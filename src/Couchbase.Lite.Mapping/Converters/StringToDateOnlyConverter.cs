@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Couchbase.Lite.Mapping.Converters
 {
-    internal class StringToDateOnlyConverter : JsonConverter
+    public class StringToDateOnlyConverter : JsonConverter
     {
         public override bool CanConvert(Type objectType)
         {
@@ -21,7 +21,7 @@ namespace Couchbase.Lite.Mapping.Converters
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var newValue = (DateOnly)DateOnly.Parse((string)value);
+            var newValue = value.ToString();
             serializer.Serialize(writer, newValue);
         }
     }
