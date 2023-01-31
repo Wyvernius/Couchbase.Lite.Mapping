@@ -16,7 +16,7 @@ namespace Couchbase.Lite.Mapping.Converters
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            return DateOnly.Parse((string)reader.Value);
+            return string.IsNullOrEmpty((string)reader.Value) ? new DateOnly() : DateOnly.Parse((string)reader.Value);
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
