@@ -9,7 +9,7 @@
             {
                 if (_propertyNameConverter == null)
                 {
-                    _propertyNameConverter = new LowerCamelCasePropertyNameConverter();
+                    _propertyNameConverter = new LoopThroughPropertyNameConverter();
                 }
 
                 return _propertyNameConverter;
