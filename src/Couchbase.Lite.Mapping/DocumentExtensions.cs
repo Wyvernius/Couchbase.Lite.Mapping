@@ -1,6 +1,5 @@
 ﻿using System;
 using Couchbase.Lite.Mapping;
-using Couchbase.Lite.Mapping.Converters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -25,8 +24,6 @@ namespace Couchbase.Lite
 
                         settings.Converters.Add(new BlobToBytesJsonConverter());
                         settings.Converters.Add(new DateTimeOffsetToDateTimeJsonConverter());
-                        settings.Converters.Add(new StringToDateOnlyConverter());
-                        settings.Converters.Add(new StringToTimeOnlyConverter());
 
                         var dictionary = document.ToMutable()?.ToDictionary();
 
@@ -72,8 +69,6 @@ namespace Couchbase.Lite
 
                         settings.Converters.Add(new BlobToBytesJsonConverter());
                         settings.Converters.Add(new DateTimeOffsetToDateTimeJsonConverter());
-                        settings.Converters.Add(new StringToDateOnlyConverter());
-                        settings.Converters.Add(new StringToTimeOnlyConverter());
 
                         var dictionary = document.ToMutable()?.ToDictionary();
 

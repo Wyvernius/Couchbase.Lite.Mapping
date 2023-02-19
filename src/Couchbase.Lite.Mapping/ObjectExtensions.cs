@@ -109,22 +109,6 @@ namespace Couchbase.Lite
                     dictionary[propertyName] = new DateTimeOffset((DateTime) propertyValue);
                 }
             }
-            else if (propertyType == typeof(TimeOnly) || propertyType == typeof(TimeOnly?))
-            {
-                var dateTimeVal = ((TimeOnly)propertyValue);
-                if (dateTimeVal != default(TimeOnly))
-                {
-                    dictionary[propertyName] = dateTimeVal.ToTimeSpan().ToString();
-                }
-            }
-            else if (propertyType == typeof(DateOnly) || propertyType == typeof(DateOnly?))
-            {
-                var dateTimeVal = ((DateOnly)propertyValue);
-                if (dateTimeVal != default(DateOnly))
-                {
-                    dictionary[propertyName] = dateTimeVal.ToString();
-                }
-            }
             else if (!propertyType.IsSimple() && !propertyType.IsEnum && propertyType.IsClass && propertyValue != null)
             {
                 if (typeof(IEnumerable).IsAssignableFrom(propertyType))
