@@ -1,16 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <LangVersion>7.1</LangVersion>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Attributes\" />
     <Folder Include="Resolvers\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Couchbase.Lite.Enterprise" Version="3.0.2" />
-    <PackageReference Include="Couchbase.Lite.Enterprise.Support.NetDesktop" Version="3.0.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="Couchbase.Lite.Enterprise" Version="2.8.4" />
+    <PackageReference Include="Couchbase.Lite.Enterprise.Support.NetDesktop" Version="2.8.4" />
   </ItemGroup>
 </Project>
