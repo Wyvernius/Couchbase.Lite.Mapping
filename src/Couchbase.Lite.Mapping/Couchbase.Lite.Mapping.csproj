@@ -10,7 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Couchbase.Lite.Enterprise" Version="3.0.8" />
     <PackageReference Include="Couchbase.Lite.Enterprise.Support.NetDesktop" Version="3.0.8" />
-    <PackageReference Condition="$([MSBuild]::IsOSPlatform('OSX'))" Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Newtonsoft.Json" />
