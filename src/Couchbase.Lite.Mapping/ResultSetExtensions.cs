@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Couchbase.Lite.Mapping;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -70,7 +71,7 @@ namespace Couchbase.Lite
 
         public static IEnumerable<T> ToObjects<T>(this List<Query.Result> results)
         {
-            List<T> objects = default;
+            List<T> objects = Array.Empty<T>().ToList();
 
             if (results?.Count > 0)
             {
