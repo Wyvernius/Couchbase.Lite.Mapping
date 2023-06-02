@@ -15,4 +15,7 @@
   <ItemGroup>
     <None Remove="Newtonsoft.Json" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CouchbaseDB\Couchbase\Couchbase.csproj" />
+  </ItemGroup>
 </Project>
