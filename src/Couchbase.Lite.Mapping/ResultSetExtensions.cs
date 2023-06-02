@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Xml.XPath;
+using System.Threading.Tasks;
 using System.Linq;
 using Couchbase.Lite.Mapping;
 using CouchbaseDB.Couchbase;
