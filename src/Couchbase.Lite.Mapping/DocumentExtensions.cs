@@ -22,7 +22,7 @@ namespace Couchbase.Lite
                             ContractResolver = new ExcludeStreamPropertiesResolver()
                         };
 
-                        settings.Converters.Add(new BlobToBytesJsonConverter());
+                       // settings.Converters.Add(new BlobToBytesJsonConverter());
                         settings.Converters.Add(new DateTimeOffsetToDateTimeJsonConverter());
 
                         var dictionary = document.ToMutable()?.ToDictionary();
@@ -67,7 +67,7 @@ namespace Couchbase.Lite
                             ContractResolver = new ExcludeStreamPropertiesResolver()
                         };
 
-                        settings.Converters.Add(new BlobToBytesJsonConverter());
+                        //settings.Converters.Add(new BlobToBytesJsonConverter());
                         settings.Converters.Add(new DateTimeOffsetToDateTimeJsonConverter());
 
                         var dictionary = document.ToMutable()?.ToDictionary();
