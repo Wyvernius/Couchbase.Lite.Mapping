@@ -101,7 +101,7 @@ namespace Couchbase.Lite
         {
             if (propertyType == typeof(byte[]) || propertyType == typeof(Stream))
             {
-                dictionary[propertyName] = new Blob(string.Empty, (byte[])propertyValue);
+                dictionary[propertyName] = Convert.ToBase64String((byte[])propertyValue); // new Blob(string.Empty, (byte[])propertyValue);
             }
             else if (propertyType == typeof(DateTime) || propertyType == typeof(DateTime?)) {
                 var dateTimeVal = ((DateTime) propertyValue);
