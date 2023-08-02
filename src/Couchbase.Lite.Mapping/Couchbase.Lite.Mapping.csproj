@@ -9,9 +9,11 @@
   </ItemGroup>
   <ItemGroup Condition="$([MSBuild]::IsOSPlatform('Linux'))">
     <PackageReference Include="Couchbase.Lite.Enterprise" Version="3.0.12" />
+    <PackageReference Include="Couchbase.Lite.Enterprise.Support.NetDesktop" Version="3.0.12" />
   </ItemGroup>
   <ItemGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
     <PackageReference Include="Couchbase.Lite.Enterprise" Version="3.1.0" />
+    <PackageReference Include="Couchbase.Lite.Enterprise.Support.NetDesktop" Version="3.1.0" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
