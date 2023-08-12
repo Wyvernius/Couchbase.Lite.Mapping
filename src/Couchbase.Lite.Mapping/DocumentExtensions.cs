@@ -3,7 +3,7 @@ using Couchbase.Lite.Mapping;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Couchbase.Lite
+namespace Couchbase.Lite.Old
 {
     public static class DocumentExtensions
     {
